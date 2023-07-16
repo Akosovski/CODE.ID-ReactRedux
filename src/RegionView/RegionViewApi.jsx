@@ -3,7 +3,7 @@ import RegionApi from "../api/RegionApi";
 import RegionCreate from "./RegionCreate";
 
 export default function RegionViewApi() {
-  const [region, setRegion] = useState([]);
+  const [regions, setRegion] = useState([]);
   const [refresh, setRefresh] = useState(false);
   const [display, setDisplay] = useState(false);
   
@@ -28,7 +28,7 @@ export default function RegionViewApi() {
       ) : (
         <>
           <h2>List Regions</h2>
-          <button onClick={() => setDisplay(true)}>Add Regions</button>
+          <button onClick={() => setDisplay(true)}>Add Region</button>
           <table>
             <thead>
               <tr>
@@ -38,12 +38,12 @@ export default function RegionViewApi() {
               </tr>
             </thead>
             <tbody>
-              {region && region.map((reg) => (
-                  <tr key={reg.regionId}>
-                    <td>{reg.regionId}</td>
-                    <td>{reg.regionName}</td>
+              {regions && regions.map((reg) => (
+                  <tr key={reg.region_id}>
+                    <td>{reg.region_id}</td>
+                    <td>{reg.region_name}</td>
                     <td>
-                      <button onClick={() => onDelete(reg.regionId)}>
+                      <button onClick={() => onDelete(reg.region_id)}>
                         Delete
                       </button>
                     </td>

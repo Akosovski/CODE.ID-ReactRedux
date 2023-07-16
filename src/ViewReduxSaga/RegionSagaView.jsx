@@ -27,9 +27,9 @@ export default function RegionSagaView() {
             <tbody>
               {regions &&
                 regions.map((reg) => (
-                  <tr key={reg.regionId}>
-                    <td>{reg.regionId}</td>
-                    <td>{reg.regionName}</td>
+                  <tr key={reg.region_id}>
+                    <td>{reg.region_id}</td>
+                    <td>{reg.region_name}</td>
                     <td>
                       <button>Delete</button>
                     </td>
